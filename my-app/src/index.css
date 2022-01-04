@@ -52,4 +52,12 @@ body {
   .hello-world {
     border: 1px solid black;
   }
+
+  .my-class {
+    background-color: red;
+  }
+
+  .child-component {
+    border: 1px solid black;
+  }
   

@@ -22,7 +22,6 @@ const user = {
                 Hello {formatName(user)}!
 
                 <ChildComponent value="Super"></ChildComponent>
-                <ChildComponent value="Super"></ChildComponent>
             </div>
         );
     }
@@ -42,7 +41,7 @@ const user = {
         return (
             <div className="child-component">
                 {this.props.value}
-                <h1> This is the place {this.state.currentValue}</h1>
+                <h1>{this.state.currentValue}</h1>
                 <button onClick={() => this.setState({"currentValue": 100})}>Click Me</button>
             </div>
         );

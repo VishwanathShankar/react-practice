@@ -6,7 +6,7 @@ import './index.css';
     render() {
         return (
             <div className="hello-world">
-                Hello World
+                Hello World {alert("Hello World")}
             </div>
         );
     }
