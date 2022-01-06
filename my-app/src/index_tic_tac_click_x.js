@@ -17,7 +17,6 @@ class Square extends React.Component {
         onClick={() => this.setState({value: 'X'})}
       >
         {this.state.value}
-        {this.props.sqNum}
       </button>
     );
   }
@@ -25,7 +24,7 @@ class Square extends React.Component {
 
 class Board extends React.Component {
   renderSquare(i) {
-    return <Square sqNum={i} />;
+    return <Square />;
   }
 
   render() {
@@ -76,7 +75,3 @@ ReactDOM.render(
   <Game />,
   document.getElementById('root')
 );
-
-
-
-  
