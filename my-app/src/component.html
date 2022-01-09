@@ -1,15 +1,22 @@
-<game>
-    <board>
-        <square></square>
-        <square></square>
-        <square></square>
-        <square></square>
-        <square></square>
-        <square></square>
-        <square></square>
-        <square></square>
-        <square></square>
-    </board>
-</game>
+<parent>
+    myparentFunction(input) {
+        console.log(input);
+    }
 
-<button onclick="" ></button>
+    name = "Vishwanath"
+
+    <child parentName={this.name} parentFuncReference={this.myparentFunction}>
+        dataFromChild = "xyz"
+        {this.props.parentFuncReference(dataFromChild)}
+
+        {this.props.parentName}
+    </child>
+</parent>
+
+function function1(callbackFunc) { callbackFunc(); }
+
+function function2() {
+    console.log("I am from function 2");
+}
+
+function1(function2);

@@ -1,0 +1,33 @@
+<game>
+    <board>
+        square [
+            X ,null , null
+            null, null, null
+            null, null, null
+        ]
+
+        clickHadler(position) {
+            this.square[position] = 'X'
+        }
+
+        <square 0 key=value>
+            {this.props.clickHadler(0)}
+            X</square>
+        <square 1>
+            {this.props.clickHadler(1)}
+           State Object: { 
+              value: X
+           }
+        
+        </square>
+        <square></square>
+        <square></square>
+        <square></square>
+        <square></square>
+        <square></square>
+        <square></square>
+        <square></square>
+    </board>
+</game>
+
+<button onclick="" ></button>
