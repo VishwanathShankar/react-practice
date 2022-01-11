@@ -1,77 +1,61 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Typeahead } from 'react-bootstrap-typeahead';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 import './index.css';
 
-class Music extends React.Component {
+class Parent extends React.Component {
   constructor() {
     super()
     console.log("I am from constuctor");
     this.state = {
-      instrument : 'Guitar'
+      instrument : 'Guitar',
+      rederFirstPart: true,
+      musicalInstruments: ["flute", "mouth organ", "violin"]
     }
-  }
-
-  /*
-  static getDerivedStateFromProps(props, state){
-    console.log("I am from getDerivedStateFromProps");
-    return {
-      instrument: props.NewInstrument
-    }
-  }
-  */
-
-  componentDidMount() {
-    console.log("I am from componentDidMount");
-    setTimeout(() => {
-      this.setState({instrument: "Violin"})
-    }, 2000);
-    
   }
 
   
-  shouldComponentUpdate() {
-    console.log("I am from shouldComponentUpdate");
-    return true;
-  }
-
-  getSnapshotBeforeUpdate(prevProps, prevState) {
-    console.log("I am from getSnapshotBeforeUpdate");
-    document.getElementById("containter-1").innerHTML = "Before the update, the instrument was "+ prevState.instrument;
-    return null;
-  }
-
-  componentDidUpdate() {
-    console.log("I am from componentDidUpdate");
-    document.getElementById("containter-2").innerHTML = "The updated insyrument is "+  this.state.instrument;
-
-  }
-
-  componentWillUnmount() {
-    console.log("I am from componentWillUnmount");
-  }
-
-  removeDomEmlements() {
-    setTimeout(() => {
-      ReactDOM.unmountComponentAtNode(document.getElementById("root"));
-    }, 5000);
-  }
 
   render() {
     console.log("I am from render method");
-    return (
-      <div>
-        <h1>I know how to play {this.state.instrument}</h1>
-        {this.removeDomEmlements()}
-        <div id="containter-1"></div>
-        <div id="containter-2"></div>
-      </div>
-    );
+      return this.state.rederFirstPart? (
+        <div>
+          <h1>this the if success condition</h1>
+          <h1>I know how to play {this.state.instrument}</h1>
+          <Typeahead
+              onChange={(selected) => {
+                // Handle selections...
+              }}
+              options={this.state.musicalInstruments}
+          />
+
+          {
+            this.state.musicalInstruments.map((element, index) => { 
+              return <p key={index}>{element} </p>
+            })
+
+          }
+        </div>
+      )
+
+      :
+     
+      (
+        <div>
+          <h1>this the else condition</h1>
+
+          <h1>I know how to play {this.state.instrument}</h1>
+          
+        </div>
+      )
+    
   }
 }
 // ========================================
 
 ReactDOM.render(
-  <Music NewInstrument="Drums"  />,
+  <Parent NewInstrument="Drums"  />,
   document.getElementById('root')
 );
 

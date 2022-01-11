@@ -20,3 +20,28 @@ function function2() {
 }
 
 function1(function2);
+
+
+
+<parent>
+    name: "xyz"
+
+    parentFun(data) {
+        this.setData({name: data})
+    }
+
+    <child1 parenFun={this.parentFun}>
+        this.props.parenFun("xyz")
+    </child1>
+    <child2 dataFromAnyone={this.state.name}>
+        {this.props.dataFromAnyone} 
+    </child2>
+
+</parent>
+
+
+<Application>
+    <navbar></navbar>
+    <imagecomponent></imagecomponent>
+    <overviewcontact></overviewcontact>
+</Application>
