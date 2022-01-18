@@ -1,0 +1,16 @@
+[
+    {
+        "id" : "1",
+        "name": "Khaithan Fan",
+        "accordian": true,
+        "subComponents": [
+            "blade", "motor"
+        ] 
+    },
+    {
+        "id" : "2",
+        "name": "Bearing",
+        "accordian": false,
+        "subComponents": [ ] 
+    }
+]

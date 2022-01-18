@@ -1,0 +1,11 @@
+[
+    {
+        "id" : "5",
+        "name": "bearing",
+        "accordian": false,
+        "subComponents": [
+        ],
+        "width": 300,
+        "height": 200
+    }
+]

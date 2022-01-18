@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { Dropdown } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
 
 class ModalComp extends React.Component {
   render() {
